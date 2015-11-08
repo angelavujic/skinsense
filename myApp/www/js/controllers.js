@@ -6,7 +6,7 @@ angular.module('starter.controllers', [])
     var options = { 
         quality : 75, 
         destinationType : Camera.DestinationType.FILE_URI,
-        // destinationType : Camera.DestinationType.DATA_URL, 
+        //destinationType : Camera.DestinationType.DATA_URL, 
         sourceType : Camera.PictureSourceType.CAMERA, 
         allowEdit : true,
         encodingType: Camera.EncodingType.JPEG,
@@ -20,11 +20,13 @@ angular.module('starter.controllers', [])
         // $scope.imgURI = "data:image/jpeg;base64," + imageData;
         $scope.url = imageData;
         alert('$scope.url: ' + $scope.url);
+
         $scope.upload();
     }, function(err) {
         alert('oops');
         // An error occured. Show a message to the user
     });
+
   };
 
   $scope.upload = function() {
