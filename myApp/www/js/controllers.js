@@ -6,7 +6,7 @@ angular.module('starter.controllers', [])
     var options = { 
         quality : 75, 
         destinationType : Camera.DestinationType.FILE_URI,
-        // destinationType : Camera.DestinationType.DATA_URL, 
+        //destinationType : Camera.DestinationType.DATA_URL, 
         sourceType : Camera.PictureSourceType.CAMERA, 
         allowEdit : true,
         encodingType: Camera.EncodingType.JPEG,
@@ -25,6 +25,7 @@ angular.module('starter.controllers', [])
         alert('oops');
         // An error occured. Show a message to the user
     });
+
   };
 
   $scope.upload = function() {
