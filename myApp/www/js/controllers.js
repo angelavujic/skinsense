@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $cordovaCamera, $cordovaFileTransfer) {
+.controller('DashCtrl', function($scope, $state, $cordovaCamera, $cordovaFileTransfer) {
 
   $scope.takePicture = function() {
     var options = { 
@@ -39,11 +39,11 @@ angular.module('starter.controllers', [])
       var targetPath = $scope.url;
       
       $cordovaFileTransfer.upload("http://ec2-52-33-73-217.us-west-2.compute.amazonaws.com/upload", targetPath, options).then(function(result) {
-          alert("SUCCESS: " + JSON.stringify(result.response));
+          // alert("SUCCESS: " + JSON.stringify(result.response));
           $scope.progress = false;
-          $location.path('#/tab/dash/1')
+          $state.go('tab.dash-results', {'state': 1});
       }, function(err) {
-          alert("ERROR: " + JSON.stringify(err));
+          // alert("ERROR: " + JSON.stringify(err));
           $scope.progress = false;
       }, function (progress) {
         $scope.progress = true;
