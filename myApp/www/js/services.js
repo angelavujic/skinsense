@@ -2,21 +2,21 @@ angular.module('starter.services', [])
 .factory('States', function() {
   var states = [{
     id: 1,
-    color: '#fabbbb',
-    icon: '',
+    color: '#E6FAE3',
+    icon: 'ion-checkmark-round',
     header: 'No Melanoma',
     body: 'The photographed skin appeared to be a benign lesion. While no medical action is needed, continue to care for your skin and repeat this test weekly.'
   }, {
     id: 2,
-    color: '#fabbbb',
-    icon: '',
+    color: '#FFF3C7',
+    icon: 'ion-alert-circled',
     header: 'Suspected Melanoma',
     body: 'There is a chance that your skin is developing melanoma. Contact your doctor or dermatologist to remove the suspicious lesion and examine your skin.'
   }, {
     id: 3,
-    color: '#fabbbb',
-    icon: '',
-    header: 'Melanoma Confirmed',
+    color: '#FFF3C7',
+    icon: 'ion-alert-circled',
+    header: 'High Risk of Melanoma',
     body: 'Contact your doctor or dermatologist to remove the suspicious lesion and examine your skin.'
   }];
 

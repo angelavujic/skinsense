@@ -1,7 +1,7 @@
 <ion-view view-title="Skinsense">
-  <ion-content ng-controller="DashCtrl" class="padding">
-      <h2 class="text-center">Take a photo of your skin</h2>
-      <a ng-click="takePicture()"><img ng-show="url !== undefined" class="img-full" ng-src="{{url}}"><img ng-show="url === undefined" class="img-full" ng-src="http://placehold.it/480x480"></a>
+  <ion-content ng-controller="DashCtrl" class="padding row row-center">
+      <a ng-click="takePicture()"><img ng-show="url !== undefined" class="img-full" ng-src="{{url}}"><img ng-show="url === undefined" class="img-full" ng-src="img/placeholder_photo.png"></a>
+      <p class="text-center lead">Skinsense detects melanoma by analyzing pictures of your skin. Take a close-up photo that shows your skin's details.</p>
       <a href="#/tab/dash/1">Test state 1</a>
       <a href="#/tab/dash/2">Test state 2</a>
       <a href="#/tab/dash/3">Test state 3</a>

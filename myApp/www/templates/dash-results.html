@@ -1,8 +1,11 @@
 <ion-view>
-  <ion-content class="padding">
+  <ion-content class="padding text-center row row-center">
+    <div class="icon-jumbotron" style="background-color: {{state.color}}">
+      <i class="icon {{state.icon}}"></i>
+    </div>
     <h1>{{state.header}}</h1>
     <p>{{state.body}}</p>
-    <a ng-click="$ionicHistory.clearHistory()" href="#/tab/chats">View History</a>
-    <a href="#/tab/dash">Take Another Photo</a>
+    <a class="ghost-button" href="#/tab/chats">View History</a>
+    <a class="ghost-button" href="#/tab/dash">Take Another Photo</a>
   </ion-content>
 </ion-view>
