@@ -39,7 +39,7 @@ angular.module('starter.controllers', [])
 
       var targetPath = $scope.url;
       
-      $cordovaFileTransfer.upload("http://ec2-52-32-82-147.us-west-2.compute.amazonaws.com/upload", targetPath, options).then(function(result) {
+      $cordovaFileTransfer.upload("http://ec2-52-33-73-217.us-west-2.compute.amazonaws.com/upload", targetPath, options).then(function(result) {
           alert("SUCCESS: " + JSON.stringify(result.response));
       }, function(err) {
           alert("ERROR: " + JSON.stringify(err));
@@ -49,8 +49,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ResultsCtrl', function($scope, $stateParams, $ionicNavBarDelegate, States) {
-  // $ionicNavBarDelegate.showBackButton(false);
+.controller('ResultsCtrl', function($scope, $stateParams, States) {
   $scope.state = States.get($stateParams.state);
 })
 

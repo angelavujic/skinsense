@@ -1,6 +1,36 @@
-h1, h2, h3, h4, p {
+html {font-size: 1em;}
+
+body {
+  background-color: white;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #333;
+}
+
+h1, h2, h3, h4, p, a {
 	font-family: 'Open Sans', sans-serif;
 }
+
+p {margin-bottom: 1.3em;}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.441em;
+}
+
+h2 {font-size: 1.953em;}
+
+h3 {font-size: 1.563em;}
+
+h4 {font-size: 1.25em;}
+
+small, .font_small {font-size: 0.8em;}
 
 /* Empty. Add your own CSS if you like */
 .text-center {
@@ -10,4 +40,58 @@ h1, h2, h3, h4, p {
 .img-full {
 	display: block;
 	width: 100%;
+	margin-bottom: 1.3em;
+}
+
+.lead {
+	font-size: 1.25em;
+}
+
+.ghost-button {
+  display: inline-block;
+  width: 240px;
+  margin: 16px;
+  padding: 16px;
+  color: #242424;
+  border: 2px solid #242424;
+  font-weight: 600;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+  text-decoration: none;
+}
+
+.padding {
+	padding: 30px;
+}
+
+.icon-jumbotron {
+	font-size: 48px;
+	padding: 40px 0;
+	margin-bottom: 0.5em;
+}
+
+.placeholder-photo {
+	width: 480px;
+	height: 480px;
+}
+
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
+    color: #70C6FF;
+}
+
+.activated {
+	color: #70C6FF !important;
+	border-color: #70C6FF !important;
+}
+.tabs-striped .tab-item.tab-item-active {
+	border-color: #70C6FF;
+}
+
+.bar.bar-stable {
+	background-color: #fff;
+}
+
+.warning-text {
+	color: #FFD332;
 }
