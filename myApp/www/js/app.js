@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
+var example = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -82,4 +82,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 
+});
+
+example.controller("ExampleController", function($scope, $cordovaFileTransfer) {
+ 
+    $scope.upload = function() {
+      var options = {
+        fileKey: "corgis",
+        fileName: "corgis.jpg",
+        chunkedMode: false,
+        mimeType: "image/jpeg"
+        };
+
+        var targetPath = "../img/corgis.jpg";
+        
+        $cordovaFileTransfer.upload("http://ec2-52-32-82-147.us-west-2.compute.amazonaws.com/upload", targetPath, options).then(function(result) {
+            alert("SUCCESS: " + JSON.stringify(result.response));
+        }, function(err) {
+            alert("ERROR: " + JSON.stringify(err));
+        }, function (progress) {
+            alert("PROGRESS");
+        });
+    }
+ 
 });
