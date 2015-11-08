@@ -1,6 +1,12 @@
-angular.module('starter.controllers', [])
+var controllers = angular.module('starter.controllers', [])
 
+<<<<<<< Updated upstream
 .controller('DashCtrl', function($scope, $state, $cordovaCamera, $cordovaFileTransfer) {
+=======
+.controller('DashCtrl', function($scope, $cordovaCamera, $cordovaFileTransfer, Chats) {
+
+  alert(Chats);
+>>>>>>> Stashed changes
 
   $scope.takePicture = function() {
     var options = { 
@@ -19,7 +25,14 @@ angular.module('starter.controllers', [])
     $cordovaCamera.getPicture(options).then(function(imageData) {
         // $scope.imgURI = "data:image/jpeg;base64," + imageData;
         $scope.url = imageData;
+<<<<<<< Updated upstream
         // alert('$scope.url: ' + $scope.url);
+=======
+        alert('$scope.url: ' + $scope.url);
+
+
+
+>>>>>>> Stashed changes
         $scope.upload();
     }, function(err) {
         alert('oops');
