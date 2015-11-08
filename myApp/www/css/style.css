@@ -1,4 +1,13 @@
+h1, h2, h3, h4, p {
+	font-family: 'Open Sans', sans-serif;
+}
+
 /* Empty. Add your own CSS if you like */
 .text-center {
 	text-align: center;
+}
+
+.img-full {
+	display: block;
+	width: 100%;
 }
