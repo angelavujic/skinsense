@@ -45,6 +45,10 @@ angular.module('starter.controllers', [])
           alert("PROGRESS");
       });
   };
+
+  $scope.swapState = function() {
+    alert('y0');
+  }
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

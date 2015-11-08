@@ -1,9 +1,9 @@
 <ion-view view-title="Skinsense">
   <ion-content ng-controller="DashCtrl" class="padding">
-      <h2 class="text-center">Take a photo</h2>
-      <img ng-show="url !== undefined" ng-src="{{url}}">
-      <img ng-show="url === undefined" ng-src="http://placehold.it/300x300">
-      <p ng-show="url !== undefined">{{url}}</p>
-      <button class="button" ng-click="takePicture()">Take Picture</button>
+      <h2 class="text-center">Take a photo of your skin</h2>
+      <a ng-click="takePicture()"><img ng-show="url !== undefined" class="img-full" ng-src="{{url}}"><img ng-show="url === undefined" class="img-full" ng-src="http://placehold.it/480x480"></a>
+      <a ng-click="swapState()">Test state 1</a>
+      <a ng-click="swapState()">Test state 2</a>
+      <a ng-click="swapState()">Test state 3</a>
   </ion-content>
 </ion-view>
