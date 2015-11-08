@@ -1,8 +1,9 @@
 <ion-view view-title="Skinsense">
   <ion-content ng-controller="DashCtrl" class="padding">
       <h2 class="text-center">Take a photo</h2>
-      <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
-      <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300">
+      <img ng-show="url !== undefined" ng-src="{{url}}">
+      <img ng-show="url === undefined" ng-src="http://placehold.it/300x300">
+      <p ng-show="url !== undefined">{{url}}</p>
       <button class="button" ng-click="takePicture()">Take Picture</button>
   </ion-content>
 </ion-view>

@@ -5,7 +5,8 @@ angular.module('starter.controllers', [])
   $scope.takePicture = function() {
     var options = { 
         quality : 75, 
-        destinationType : Camera.DestinationType.DATA_URL, 
+        destinationType : Camera.DestinationType.FILE_URI,
+        // destinationType : Camera.DestinationType.DATA_URL, 
         sourceType : Camera.PictureSourceType.CAMERA, 
         allowEdit : true,
         encodingType: Camera.EncodingType.JPEG,
@@ -16,9 +17,11 @@ angular.module('starter.controllers', [])
     };
 
     $cordovaCamera.getPicture(options).then(function(imageData) {
-        $scope.imgURI = "data:image/jpeg;base64," + imageData;
+        // $scope.imgURI = "data:image/jpeg;base64," + imageData;
+        $scope.url = imageData;
+        alert('$scope.url: ' + $scope.url);
     }, function(err) {
-        console.log('oops');
+        alert('oops');
         // An error occured. Show a message to the user
     });
   }
