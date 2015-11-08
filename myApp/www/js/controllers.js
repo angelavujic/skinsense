@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $cordovaCamera) {
+.controller('DashCtrl', function($scope, $cordovaCamera, $cordovaFileTransfer) {
 
   $scope.takePicture = function() {
     var options = { 
@@ -20,11 +20,31 @@ angular.module('starter.controllers', [])
         // $scope.imgURI = "data:image/jpeg;base64," + imageData;
         $scope.url = imageData;
         alert('$scope.url: ' + $scope.url);
+        $scope.upload();
     }, function(err) {
         alert('oops');
         // An error occured. Show a message to the user
     });
-  }
+  };
+
+  $scope.upload = function() {
+    var options = {
+      fileKey: "corgis",
+      fileName: "test.jpg",
+      chunkedMode: false,
+      mimeType: "image/jpeg"
+      };
+
+      var targetPath = $scope.url;
+      
+      $cordovaFileTransfer.upload("http://ec2-52-32-82-147.us-west-2.compute.amazonaws.com/upload", targetPath, options).then(function(result) {
+          alert("SUCCESS: " + JSON.stringify(result.response));
+      }, function(err) {
+          alert("ERROR: " + JSON.stringify(err));
+      }, function (progress) {
+          alert("PROGRESS");
+      });
+  };
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
