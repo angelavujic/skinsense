@@ -83,26 +83,3 @@ var example = angular.module('starter', ['ionic', 'starter.controllers', 'starte
   $urlRouterProvider.otherwise('/tab/dash');
 
 });
-
-example.controller("ExampleController", function($scope, $cordovaFileTransfer) {
- 
-    $scope.upload = function() {
-      var options = {
-        fileKey: "corgis",
-        fileName: "corgis.jpg",
-        chunkedMode: false,
-        mimeType: "image/jpeg"
-        };
-
-        var targetPath = "../img/corgis.jpg";
-        
-        $cordovaFileTransfer.upload("http://ec2-52-32-82-147.us-west-2.compute.amazonaws.com/upload", targetPath, options).then(function(result) {
-            alert("SUCCESS: " + JSON.stringify(result.response));
-        }, function(err) {
-            alert("ERROR: " + JSON.stringify(err));
-        }, function (progress) {
-            alert("PROGRESS");
-        });
-    }
- 
-});
