@@ -1,9 +1,15 @@
 <ion-view view-title="Skinsense">
   <ion-content ng-controller="DashCtrl" class="padding row row-center">
-      <a ng-click="takePicture()"><img ng-show="url !== undefined" class="img-full" ng-src="{{url}}"><img ng-show="url === undefined" class="img-full" ng-src="img/placeholder_photo.png"></a>
+      <div class="placeholder-photo">
+      	<div class="placeholder-overlay" ng-show="progress"><div class="text-center spin" ><ion-spinner></ion-spinner><h2 class="no-margin">Analyzing Photo</h2></div></div>
+      	<a ng-click="takePicture()">
+      		<img ng-show="url !== undefined" class="img-full" ng-src="{{url}}">
+      		<img ng-show="url === undefined" class="img-full" ng-src="img/placeholder_photo.png">
+      	</a>
+      </div>
       <p class="text-center lead">Skinsense detects melanoma by analyzing pictures of your skin. Take a close-up photo that shows your skin's details.</p>
-      <a href="#/tab/dash/1">Test state 1</a>
+<!--       <a href="#/tab/dash/1">Test state 1</a>
       <a href="#/tab/dash/2">Test state 2</a>
-      <a href="#/tab/dash/3">Test state 3</a>
+      <a href="#/tab/dash/3">Test state 3</a> -->
   </ion-content>
 </ion-view>

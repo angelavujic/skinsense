@@ -19,7 +19,7 @@ angular.module('starter.controllers', [])
     $cordovaCamera.getPicture(options).then(function(imageData) {
         // $scope.imgURI = "data:image/jpeg;base64," + imageData;
         $scope.url = imageData;
-        alert('$scope.url: ' + $scope.url);
+        // alert('$scope.url: ' + $scope.url);
         $scope.upload();
     }, function(err) {
         alert('oops');
@@ -39,10 +39,13 @@ angular.module('starter.controllers', [])
       
       $cordovaFileTransfer.upload("http://ec2-52-33-73-217.us-west-2.compute.amazonaws.com/upload", targetPath, options).then(function(result) {
           alert("SUCCESS: " + JSON.stringify(result.response));
+          $scope.progress = false;
+          $location.path('#/tab/dash/1')
       }, function(err) {
           alert("ERROR: " + JSON.stringify(err));
+          $scope.progress = false;
       }, function (progress) {
-          alert("PROGRESS");
+        $scope.progress = true;
       });
   };
 })

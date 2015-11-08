@@ -32,6 +32,10 @@ h4 {font-size: 1.25em;}
 
 small, .font_small {font-size: 0.8em;}
 
+.no-margin {
+	margin-top: 0.5em;
+}
+
 /* Empty. Add your own CSS if you like */
 .text-center {
 	text-align: center;
@@ -39,6 +43,7 @@ small, .font_small {font-size: 0.8em;}
 
 .img-full {
 	display: block;
+	position: relative;
 	width: 100%;
 	margin-bottom: 1.3em;
 }
@@ -72,8 +77,22 @@ small, .font_small {font-size: 0.8em;}
 }
 
 .placeholder-photo {
-	width: 480px;
-	height: 480px;
+	position: relative;
+	width: 100%;
+}
+
+.placeholder-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9001;
+}
+
+.spin {
+	margin: 120px 0;
 }
 
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
