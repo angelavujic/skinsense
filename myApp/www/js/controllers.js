@@ -22,7 +22,7 @@ angular.module('starter.controllers', [])
         // alert('$scope.url: ' + $scope.url);
         $scope.upload();
     }, function(err) {
-        alert('oops');
+        // alert('oops');
         // An error occured. Show a message to the user
     });
 
@@ -41,7 +41,11 @@ angular.module('starter.controllers', [])
       $cordovaFileTransfer.upload("http://ec2-52-33-73-217.us-west-2.compute.amazonaws.com/upload", targetPath, options).then(function(result) {
           // alert("SUCCESS: " + JSON.stringify(result.response));
           $scope.progress = false;
-          $state.go('tab.dash-results', {'state': 1});
+          // "[\"1\"]"
+          // var res = result.response.match(/\d+/)[0];
+          var res = result.response.charAt(2);
+          // alert(JSON.stringify(res));
+          $state.go('tab.dash-results', {'state': res});
       }, function(err) {
           // alert("ERROR: " + JSON.stringify(err));
           $scope.progress = false;
