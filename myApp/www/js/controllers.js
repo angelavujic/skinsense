@@ -28,11 +28,11 @@ angular.module('starter.controllers', [])
   };
 
   $scope.upload = function() {
-    var options = {
+    var options = {/*
       fileKey: "corgis",
       fileName: "test.jpg",
       chunkedMode: false,
-      mimeType: "image/jpeg"
+      mimeType: "image/jpeg"*/
       };
 
       var targetPath = $scope.url;
