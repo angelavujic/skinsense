@@ -10,8 +10,8 @@ angular.module('starter.controllers', [])
         sourceType : Camera.PictureSourceType.CAMERA, 
         allowEdit : true,
         encodingType: Camera.EncodingType.JPEG,
-        targetWidth: 300,
-        targetHeight: 300,
+        targetWidth: 480,
+        targetHeight: 480,
         popoverOptions: CameraPopoverOptions,
         saveToPhotoAlbum: false
     };
@@ -45,10 +45,11 @@ angular.module('starter.controllers', [])
           alert("PROGRESS");
       });
   };
+})
 
-  $scope.swapState = function() {
-    alert('y0');
-  }
+.controller('ResultsCtrl', function($scope, $stateParams, $ionicNavBarDelegate, States) {
+  // $ionicNavBarDelegate.showBackButton(false);
+  $scope.state = States.get($stateParams.state);
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

@@ -49,6 +49,15 @@ var example = angular.module('starter', ['ionic', 'starter.controllers', 'starte
       }
     }
   })
+  .state('tab.dash-results', {
+    url: '/dash/:state',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/dash-results.html',
+        controller: 'ResultsCtrl'
+      }
+    }
+  })
 
   .state('tab.chats', {
       url: '/chats',
